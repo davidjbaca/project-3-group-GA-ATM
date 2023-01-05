@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <title>ATM Works the #1 ATM management software</title>
 </head>
 
 <body>
@@ -56,6 +55,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Team</a>
           </li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'atms_create' %}">New ATM Here</a></li>
+          <li class="nav-item" ><a class="nav-link" href="{% url 'index' %}">View All ATMs</a></li>
         </ul>
         <!-- Left links -->
         

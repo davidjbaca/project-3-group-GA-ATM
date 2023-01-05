@@ -119,7 +119,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-LOGIN_REDIRECT_URL = '/home/'
+# goes back to localhost:8000, title tags will let the user know what page they're on
+LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 
