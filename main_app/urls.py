@@ -16,4 +16,6 @@ urlpatterns = [
 # About page 
     path('about/', views.about, name='about'),
 
+    
+
 ]
