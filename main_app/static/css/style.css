@@ -1,0 +1,18 @@
+
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Jost', sans-serif;
+}
+
+
+
+
+#hero-container {
+    background-image: url(https://imgur.com/uRYovlM.png);
+    height: 960px;
+    width: 1450px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
