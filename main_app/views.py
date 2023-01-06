@@ -105,7 +105,7 @@ class DeleteRevenue(LoginRequiredMixin, DeleteView):
     model = Revenue
     success_url = '/atms/'
     # def get_success_url(request, atm_id):
-    #     return HttpResponseRedirect(reverse('detail', kwargs={atm_id:atm_id}))
+    #     return HttpResponseRedirect(reverse('/atms/', kwargs={atm_id:atm_id}))
 
 
 
