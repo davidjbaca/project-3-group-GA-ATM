@@ -19,5 +19,5 @@ urlpatterns = [
 
     # REVENUE
     path('atms/<int:atm_id>/add_revenue', views.add_revenue, name='add_revenue'),
-    path('atms/<int:pk>/delete/', views.AtmDelete.as_view(), name='atms_delete')
+    path('atms/revenue/<int:pk>/delete/', views.DeleteRevenue.as_view(), name='revenue_delete')
 ]
