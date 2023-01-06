@@ -28,8 +28,8 @@ def about(request):
 class AtmCreate(LoginRequiredMixin, CreateView):
     model = Atm
 
-    # fields = ['location', 'address', 'business_fee', 'surcharge']
-    fields = '__all__'
+    fields = ['location', 'address', 'business_fee', 'surcharge']
+    # fields = '__all__'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -38,7 +38,7 @@ class AtmCreate(LoginRequiredMixin, CreateView):
 
 class AtmUpdate(LoginRequiredMixin, UpdateView):
     model = Atm
-    fields = '__all__'
+    fields = ['location', 'address', 'business_fee', 'surcharge']
 
 
 class AtmDelete(LoginRequiredMixin, DeleteView):

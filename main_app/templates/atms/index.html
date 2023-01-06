@@ -1,4 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 <title>Your Current ATMs</title>
-<h1>index test</h1>
-{% endblock content %}
+<h1>ATM Performance Here:</h1>
+{% for atm in atms %}
+<div class="card">
+  <a href="/atms/{{ atm.id }}">
+    <div class="card-content">
+      <span class="card-title">{{ atm.name }}</span>
+      <p>Name: {{ atm.location }}</p>
+      <p>Address: {{ atm.address }}</p>
+    </div>
+  </a>
+</div>
+{% endfor %} {% endblock content %}
