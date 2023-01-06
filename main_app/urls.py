@@ -16,4 +16,8 @@ urlpatterns = [
     path('atms/create/', views.AtmCreate.as_view(), name='atms_create'),
     path('atms/<int:pk>/update/', views.AtmUpdate.as_view(), name='atms_update'),
     path('atms/<int:pk>/delete/', views.AtmDelete.as_view(), name='atms_delete'),
+
+    # REVENUE
+    path('atms/<int:atm_id>/add_revenue', views.add_revenue, name='add_revenue'),
+    path('atms/<int:pk>/delete/', views.AtmDelete.as_view(), name='atms_delete')
 ]

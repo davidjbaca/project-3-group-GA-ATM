@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 class Atm(models.Model):
     name = models.CharField(max_length=100)
-    location = models.CharField(max_length=50)
+    location_type = models.CharField(max_length=50)
     address = models.CharField(max_length=70)
     business_fee = models.IntegerField()
     surcharge = models.IntegerField()
@@ -23,12 +23,9 @@ class Atm(models.Model):
 class Revenue(models.Model):
     date = models.DateField()
     amount = models.IntegerField()
-    yearly = models.IntegerField()
-
-    # def __str__(self):
-    #     return f"{self.get_revenue_display()} on {self.date}"
+    # yearly = models.IntegerField()
 
     atm = models.ForeignKey(Atm, on_delete=models.CASCADE)
 
-    # def get_absolute_url(self):
-    #     return reverse('detail', kwargs={'atm_id': self.id})
+    class Meta:
+        ordering = ['-date']

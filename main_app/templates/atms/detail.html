@@ -5,8 +5,8 @@
   <div class="col s6">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ atm.name }}</span>
-        <p>Location: {{ atm.location }}</p>
+        <span class="card-title">Name: {{ atm.name }}</span>
+        <p>Location: {{ atm.location_type }}</p>
         <p>Address: {{ atm.address }}</p>
         <p>Business Fee: {{ atm.business_fee}}</p>
         <p>Surcharge: {{ atm.surcharge}}</p>
@@ -17,5 +17,34 @@
       </div>
     </div>
   </div>
-  {% endblock content %}
 </div>
+
+<div class="col s6">
+  <div class="col s6">
+    <!-- new code below -->
+    <form method="post" action="{% url 'add_revenue' atm.id %}">
+      {% csrf_token %}
+      {{ revenue_form.as_p }}
+      <input type="submit" class="btn btn-primary" value="Add Monthly Revenue">
+    </form>
+    <!-- new code above -->
+    <table class="striped">
+
+
+  <table class="table">
+    <thead class="table-dark">
+      <tr><th>Date</th><th>Monthly Revenue</th></tr>
+    </thead>
+    <tbody>
+      {% for revenue in atm.revenue_set.all %}
+        <tr>
+          <td>{{revenue.date}}</td>
+          <td>{{revenue.amount}}</td>
+          <td>X</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+  {% endblock content %}
