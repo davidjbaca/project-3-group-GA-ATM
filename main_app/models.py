@@ -29,3 +29,16 @@ class Revenue(models.Model):
 
     class Meta:
         ordering = ['-date']
+
+
+
+class CashInput(models.Model):
+    date = models.DateField('Date Cash Added')
+    amount = models.IntegerField()
+
+    atm = models.ForeignKey(Atm, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ['-date']
+
+    
