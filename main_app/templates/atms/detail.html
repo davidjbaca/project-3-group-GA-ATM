@@ -37,7 +37,10 @@
           <tr>
             <td>{{revenue.date}}</td>
             <td>{{revenue.amount}}</td>
-            <td><a href="{% url 'revenue_delete' revenue.id %}">X</a></td>
+            <td><form action="{% url 'revenue_delete' revenue.id %}" method="POST">
+              {% csrf_token %}
+              <input type="submit" value="X" class="btn" />
+            </form></td>
           </tr>
         {% endfor %}
       </tbody>
