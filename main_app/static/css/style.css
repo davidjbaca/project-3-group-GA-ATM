@@ -11,7 +11,7 @@ body{
 #hero-container {
     background-image: url(https://imgur.com/uRYovlM.png);
     height: 960px;
-    width: 2000px;
+    max-width: 1500px;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
