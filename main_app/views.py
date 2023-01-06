@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -6,10 +7,10 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Atm
+from .models import Atm, Revenue
 from .forms import RevenueForm
 
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -91,7 +92,7 @@ def add_revenue(request, atm_id):
     # validdate form
     if form.is_valid():
         # don't save the form to the db until it
-        # has the cat_id assigned
+        # has the atm_id assigned
         new_revenue = form.save(commit=False)
         new_revenue.atm_id = atm_id
         new_revenue.save()
@@ -99,7 +100,10 @@ def add_revenue(request, atm_id):
 
 # # DELETE REVENUE
 
-# def delete_revenue(request, atm_id):
-#     atm = Atm.objects.get(id=atm_id)
-
-#     return redirect(request, 'atms/detail.html', {'atm': atm, 'revenue_form': revenue_form})
+class DeleteRevenue(LoginRequiredMixin, DeleteView):
+    model = Revenue
+    success_url = '/atms/'
+    # def get_success_url(request, atm_id):
+    #     return HttpResponseRedirect(reverse('detail', kwargs={atm_id:atm_id}))
+        
+    

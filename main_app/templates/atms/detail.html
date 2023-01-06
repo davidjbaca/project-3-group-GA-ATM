@@ -5,7 +5,7 @@
   <div class="col s6">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">Name: {{ atm.name }}</span>
+        <span class="card-title">Name: <strong>{{ atm.name }}</strong></span>
         <p>Location: {{ atm.location_type }}</p>
         <p>Address: {{ atm.address }}</p>
         <p>Business Fee: {{ atm.business_fee}}</p>
@@ -40,7 +40,7 @@
         <tr>
           <td>{{revenue.date}}</td>
           <td>{{revenue.amount}}</td>
-          <td>X</td>
+          <td><a href="{% url 'revenue_delete' revenue.id %}">X</a></td>
         </tr>
       {% endfor %}
     </tbody>
