@@ -30,7 +30,7 @@
       <!-- new code above -->
     <table class="table">
       <thead class="table-dark">
-        <tr><th>Date</th><th>Monthly Revenue</th></tr>
+        <tr><th>Date</th><th>Monthly Revenue</th><th>Delete</th></tr>
       </thead>
       <tbody>
         {% for revenue in atm.revenue_set.all %}
@@ -52,7 +52,7 @@
     </form>
     <table class="table">
       <thead class="table-dark">
-        <tr><th>Date</th><th>Cash Input</th></tr>
+        <tr><th>Date</th><th>Cash Input</th><th>Delete</th></tr>
       </thead>
       <tbody>
         {% for cashinput in atm.cashinput_set.all %}
