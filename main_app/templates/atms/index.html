@@ -3,7 +3,7 @@
 <h1>ATM Performance Here:</h1>
 {% for atm in atms %}
 <div class="card">
-  <a href="/atms/{{ atm.id }}">
+  <a href="{% url 'detail' atm.id %}">
     <div class="card-content">
       <span class="card-title">{{ atm.name }}</span>
       <p>Name: {{ atm.location }}</p>

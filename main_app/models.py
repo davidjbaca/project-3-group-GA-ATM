@@ -1,10 +1,12 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
 from django.contrib.auth.models import User
 # Create your models here.
 
 
 class Atm(models.Model):
+    name = models.CharField(max_length=100)
     location = models.CharField(max_length=50)
     address = models.CharField(max_length=70)
     business_fee = models.IntegerField()
@@ -16,3 +18,17 @@ class Atm(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'atm_id': self.id})
+
+
+class Revenue(models.Model):
+    date = models.DateField()
+    amount = models.IntegerField()
+    yearly = models.IntegerField()
+
+    # def __str__(self):
+    #     return f"{self.get_revenue_display()} on {self.date}"
+
+    atm = models.ForeignKey(Atm, on_delete=models.CASCADE)
+
+    # def get_absolute_url(self):
+    #     return reverse('detail', kwargs={'atm_id': self.id})
