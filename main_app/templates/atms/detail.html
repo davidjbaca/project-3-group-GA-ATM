@@ -78,7 +78,7 @@
               <a class="nav-link" href="{% url 'index' %}">Dashboard</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Team</a>
+              <a class="nav-link" href="http://localhost:8000/#team-container">Team</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'atms_create' %}"
@@ -153,7 +153,7 @@
 
     <title>How Is This ATM Performing?</title>
     <div class="container">
-      <h1>This ATM's Performance:</h1>
+      <h1 class="text-center">This ATM's Performance:</h1>
       <div class="row">
         <div class="col s12">
           <div class="card">
@@ -161,10 +161,10 @@
               <h3 class="card-title">Name: {{ atm.name }}</h3>
               <p>Location: {{ atm.location_type }}</p>
               <p>Address: {{ atm.address }}</p>
-              <p>Business Fee: {{ atm.business_fee}}</p>
-              <p>Surcharge: {{ atm.surcharge}}</p>
+              <p>Business Fee: ${{ atm.business_fee}}</p>
+              <p>Surcharge: ${{ atm.surcharge}}</p>
             </div>
-            <div class="card-action">
+            <div class="card-action ml-2 mb-2">
               <a class="btn btn-secondary" href="{% url 'atms_update' atm.id %}"
                 >Edit</a
               >
@@ -184,11 +184,11 @@
             {{revenue_form.as_p}}
             <input
               type="submit"
-              class="btn btn-primary"
+              class="btn btn-success"
               value="Add Monthly Revenue"
             />
           </form>
-
+<br>
           <!-- new code above -->
           <table class="table">
             <thead class="table-dark">
@@ -202,14 +202,14 @@
               {% for revenue in atm.revenue_set.all %}
               <tr>
                 <td>{{revenue.date}}</td>
-                <td>{{revenue.amount}}</td>
+                <td>${{revenue.amount}}</td>
                 <td>
                   <form
                     action="{% url 'revenue_delete' revenue.id %}"
                     method="POST"
                   >
                     {% csrf_token %}
-                    <input type="submit" value="X" class="btn" />
+                    <input type="submit" value="X" class="btn text-danger" />
                   </form>
                 </td>
               </tr>
@@ -223,10 +223,11 @@
             {% csrf_token %} {{ cashinput_form.as_p }}
             <input
               type="submit"
-              class="btn btn-primary"
+              class="btn btn-success"
               value="Add Cash Input"
             />
           </form>
+<br>
           <table class="table">
             <thead class="table-dark">
               <tr>
@@ -239,14 +240,14 @@
               {% for cashinput in atm.cashinput_set.all %}
               <tr>
                 <td>{{cashinput.date}}</td>
-                <td>{{cashinput.amount}}</td>
+                <td>${{cashinput.amount}}</td>
                 <td>
                   <form
                     action="{% url 'cashinput_delete' cashinput.id %}"
                     method="POST"
                   >
                     {% csrf_token %}
-                    <input type="submit" value="X" class="btn" />
+                    <input type="submit" value="X" class="btn text-danger" />
                   </form>
                 </td>
               </tr>
