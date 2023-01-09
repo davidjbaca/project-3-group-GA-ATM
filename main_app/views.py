@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -103,7 +103,12 @@ def add_revenue(request, atm_id):
 
 class DeleteRevenue(LoginRequiredMixin, DeleteView):
     model = Revenue
-    success_url = '/atms/'
+
+    def get_success_url(self):
+        atm = self.object.atm
+        return reverse_lazy('detail', kwargs={'atm_id': atm.id})
+
+    # success_url = get_absolute_url
     # def get_success_url(request, atm_id):
     #     return HttpResponseRedirect(reverse('/atms/', kwargs={atm_id:atm_id}))
 
@@ -123,4 +128,7 @@ def add_cashinput(request, atm_id):
 
 class DeleteCashinput(LoginRequiredMixin, DeleteView):
     model = CashInput
-    success_url = '/atms/'
+    
+    def get_success_url(self):
+        atm = self.object.atm
+        return reverse_lazy('detail', kwargs={'atm_id': atm.id})
