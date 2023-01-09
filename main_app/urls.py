@@ -18,11 +18,15 @@ urlpatterns = [
     path('atms/<int:pk>/delete/', views.AtmDelete.as_view(), name='atms_delete'),
 
     # REVENUE
-    path('atms/<int:atm_id>/add_revenue', views.add_revenue, name='add_revenue'),
-    path('atms/revenue/<int:pk>/delete/', views.DeleteRevenue.as_view(), name='revenue_delete'),
+    path('atms/<int:atm_id>/add_revenue',
+         views.add_revenue, name='add_revenue'),
+    path('atms/revenue/<int:pk>/delete/',
+         views.DeleteRevenue.as_view(), name='revenue_delete'),
 
 
     # CASH INPUTS
-    path('atms/<int:atm_id>/add_cashinput', views.add_cashinput, name='add_cashinput')
-
+    path('atms/<int:atm_id>/add_cashinput',
+         views.add_cashinput, name='add_cashinput'),
+    path('atms/cashinput/<int:pk>/delete/',
+         views.DeleteCashinput.as_view(), name='cashinput_delete'),
 ]

@@ -7,7 +7,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Atm, Revenue
+from .models import Atm, Revenue, CashInput
 from .forms import RevenueForm, CashInputForm
 
 from django.http import HttpResponseRedirect
@@ -85,7 +85,6 @@ def atms_detail(request, atm_id):
     return render(request, 'atms/detail.html', {'atm': atm, 'revenue_form': revenue_form, 'cashinput_form': cashinput_form})
 
 
-
 # REVENUE STUFF
 
 def add_revenue(request, atm_id):
@@ -99,14 +98,14 @@ def add_revenue(request, atm_id):
         new_revenue.save()
     return redirect('detail', atm_id=atm_id)
 
-# # DELETE REVENUE
+# DELETE REVENUE
+
 
 class DeleteRevenue(LoginRequiredMixin, DeleteView):
     model = Revenue
     success_url = '/atms/'
     # def get_success_url(request, atm_id):
     #     return HttpResponseRedirect(reverse('/atms/', kwargs={atm_id:atm_id}))
-
 
 
 # CASH INPUT STUFF
@@ -121,5 +120,7 @@ def add_cashinput(request, atm_id):
         new_cashinput.save()
     return redirect('detail', atm_id=atm_id)
 
-        
-    
+
+class DeleteCashinput(LoginRequiredMixin, DeleteView):
+    model = CashInput
+    success_url = '/atms/'
