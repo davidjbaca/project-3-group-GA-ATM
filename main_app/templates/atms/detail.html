@@ -31,6 +31,10 @@
       type="text/css"
       href="{% static 'css/style.css' %}"
     />
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+    {{ revenue_form.media }}
   </head>
 
   <body>
@@ -176,13 +180,15 @@
         <div class="col s6">
           <!-- new code below -->
           <form method="post" action="{% url 'add_revenue' atm.id %}">
-            {% csrf_token %} {{ revenue_form.as_p }}
+            {% csrf_token %}
+            {{revenue_form.as_p}}
             <input
               type="submit"
               class="btn btn-primary"
               value="Add Monthly Revenue"
             />
           </form>
+
           <!-- new code above -->
           <table class="table">
             <thead class="table-dark">

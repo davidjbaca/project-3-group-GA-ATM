@@ -33,12 +33,14 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # add your main app
     'main_app',
+    'bootstrap_datepicker_plus',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
