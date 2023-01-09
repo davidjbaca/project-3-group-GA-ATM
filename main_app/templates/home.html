@@ -1,5 +1,4 @@
-{% extends 'base.html' %} 
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <!-- hero main image -->
 <title>ATM Works the #1 ATM management software</title>
 <div class="container" id="hero-container">
@@ -21,38 +20,51 @@
 <div class="container">
   <div class="row h-50">
     <div class="my-5 text-center">
-        <h2 class="text-center">About ATM Works</h2>
+      <h2 class="text-center">About ATM Works</h2>
+      <a href="localhost:8000/#about-container"></a>
     </div>
   </div>
 </div>
 
 <div class="container" id="about-container">
-    <div class="row h-50">
-        <div class="col-md-6 vh-50">
-            <img class="img-fluid h-100 w-100" src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="">
-        </div>
-
-        <div class="col-md-6 vh-50 text-center d-flex justify-content-center align-items-center border-right border-top">
-            <div class="">
-                <h2>Created by Industry Experts</h2>
-                <p>To manage all of your ATM's to continue to grow your business</p>
-                <p>Say bye to those spreadsheets!</p>
-            </div>
-        </div>
+  <div class="row h-50">
+    <div class="col-md-6 vh-50">
+      <img
+        class="img-fluid h-100 w-100"
+        src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+        alt=""
+      />
     </div>
 
-    <div class="row h-50">
-        <div class="col-md-6 vh-50 text-center d-flex justify-content-center align-items-center border-right border-bottom">
-            <div class="">
-                <h2>Easy to Use</h2>
-                <p>Access the application on your phone or computer</p>
-                <p>Say hello to convienence</p>
-            </div>
-        </div>
-
-        <div class="col-md-6 vh-50">
-            <img class="img-fluid h-100 w-100" src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="">
-        </div>
+    <div
+      class="col-md-6 vh-50 text-center d-flex justify-content-center align-items-center border-right border-top"
+    >
+      <div class="">
+        <h2>Created by Industry Experts</h2>
+        <p>To manage all of your ATM's to continue to grow your business</p>
+        <p>Say bye to those spreadsheets!</p>
+      </div>
     </div>
+  </div>
+
+  <div class="row h-50">
+    <div
+      class="col-md-6 vh-50 text-center d-flex justify-content-center align-items-center border-right border-bottom"
+    >
+      <div class="">
+        <h2>Easy to Use</h2>
+        <p>Access the application on your phone or computer</p>
+        <p>Say hello to convienence</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 vh-50">
+      <img
+        class="img class=img-fluid h-100 w-100"
+        src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+        alt=""
+      />
+    </div>
+  </div>
 </div>
 {% endblock content %}

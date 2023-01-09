@@ -1,14 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-<h1>Add An ATM</h1>
+  <h1>Add An ATM</h1>
 
-<form action="" method="post">
-  {% csrf_token %}
-  <table>
-    {{ form.as_table }}
-  </table>
-  <input type="submit" value="Submit!" class="btn" />
-</form>
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" class="btn btn-success" value="Submit!" />
+  </form>
 </div>
 
 {% endblock content %}
