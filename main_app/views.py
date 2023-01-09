@@ -31,7 +31,6 @@ class AtmCreate(LoginRequiredMixin, CreateView):
     model = Atm
 
     fields = ['name', 'location_type', 'address', 'business_fee', 'surcharge']
-    # fields = '__all__'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -40,7 +39,7 @@ class AtmCreate(LoginRequiredMixin, CreateView):
 
 class AtmUpdate(LoginRequiredMixin, UpdateView):
     model = Atm
-    fields = ['location', 'address', 'business_fee', 'surcharge']
+    fields = ['name', 'location_type', 'address', 'business_fee', 'surcharge']
 
 
 class AtmDelete(LoginRequiredMixin, DeleteView):
@@ -67,7 +66,7 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
-# The ability to show only the user's ATMs as this is sensitive financial data.
+# The ability to show only the user's ATMs as this is sensitive financial data. Decorating a lot to protect these.
 @login_required
 def atms_index(request):
     atms = Atm.objects.filter(user=request.user)
@@ -87,6 +86,7 @@ def atms_detail(request, atm_id):
 
 # REVENUE STUFF
 
+@login_required
 def add_revenue(request, atm_id):
     form = RevenueForm(request.POST)
     # validdate form
@@ -114,6 +114,7 @@ class DeleteRevenue(LoginRequiredMixin, DeleteView):
 
 
 # CASH INPUT STUFF
+@login_required
 def add_cashinput(request, atm_id):
     form = CashInputForm(request.POST)
     # validdate form
@@ -128,7 +129,7 @@ def add_cashinput(request, atm_id):
 
 class DeleteCashinput(LoginRequiredMixin, DeleteView):
     model = CashInput
-    
+
     def get_success_url(self):
         atm = self.object.atm
         return reverse_lazy('detail', kwargs={'atm_id': atm.id})
