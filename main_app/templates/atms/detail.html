@@ -35,7 +35,7 @@
     {% load bootstrap4 %}
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
-    {{ revenue_form.media }}
+    {% load crispy_forms_tags %}
   </head>
 
   <body>
@@ -176,19 +176,21 @@
           </div>
         </div>
       </div>
-
+<br>
       <div class="row">
         <div class="col s6">
           <!-- new code below -->
           <form method="post" action="{% url 'add_revenue' atm.id %}">
             {% csrf_token %}
-            {{revenue_form.as_p}}
+            {{ revenue_form|crispy }}
             <input
               type="submit"
               class="btn btn-success"
               value="Add Monthly Revenue"
             />
           </form>
+          <!-- NEW FORM BELOW -->
+<br>
 <br>
           <!-- new code above -->
           <table class="table">
@@ -218,16 +220,18 @@
             </tbody>
           </table>
         </div>
-
+<br>
         <div class="col s6">
           <form method="post" action="{% url 'add_cashinput' atm.id %}">
-            {% csrf_token %} {{ cashinput_form.as_p }}
+            {% csrf_token %} 
+            {{ cashinput_form|crispy }}
             <input
               type="submit"
               class="btn btn-success"
               value="Add Cash Input"
             />
           </form>
+<br>
 <br>
           <table class="table">
             <thead class="table-dark">
