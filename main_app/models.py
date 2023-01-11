@@ -55,7 +55,7 @@ class CashInput(models.Model):
 class Address(models.Model):
 
     # get relationship working and then try to get a form to work 
-    address = models.TextField('Address Here')
+    address = models.CharField(max_length=100)
     lat = models.FloatField(blank=True, null=True)
     long = models.FloatField(blank=True, null=True)
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
