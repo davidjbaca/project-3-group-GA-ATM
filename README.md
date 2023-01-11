@@ -1,9 +1,13 @@
 # General Assembly Project 3: ATM Works
 
 By Sean Lee, Phil Nguyen, and David Baca
+
 Link: <<GOES HERE>>
 
+# Description:
+
 ATM Works:
+
 Prior to ATM Works, there has been no truly versatile solution on the marketplace for ATM owners. Recognizing a lucrative business opportunity, the team made a dashboard for ATM owners to track their ATMs' performances.
 
 # Getting Started:
@@ -16,10 +20,10 @@ Prior to ATM Works, there has been no truly versatile solution on the marketplac
 
 # User Stories:
 
-1. As a user, I want a central dashboard to see all of my ATMs in one location when logged in
-2. As a user, I want to be able to add new ATM machine locations because I will be growing my business
-3. As a user, I want to add details to my new ATM when creating it such as, $amount started with, Date put into operation, $Surcharge fee per trans, Location address, $fee to Location if any
-4. As a user (admin) I want to be logged in to view only my ATM machines on a dashboard
+1. As a user, I want a central dashboard to see all of my ATMs in one location when logged in.
+2. As a user, I want to be able to add new ATM machine locations because I will be growing my business.
+3. As a user, I want to add details to my new ATM when creating it such as, $amount started with, date put into operation, $surcharge fee per transaction, location address, $fee to location (if any).
+4. As a user (admin) I want to be logged in to view only my ATM machines on a dashboard.
 5. As a user, I want to be able to click on an ATM's link from my dashboard and then go to a new page with further detail about this specific ATM.
 6. As a user (admin), I want to be able to embellish my list of ATMs such as by creating a new location, editing its info and removing it if we aren't doing business together anymore.
 7. As a user, I want to be able to input monthly revenue for any ATM I want that will be listed on the page to keep track.
@@ -28,13 +32,24 @@ Prior to ATM Works, there has been no truly versatile solution on the marketplac
 
 # ATM Works Screenshots:
 
-![image name] (url)
+![Home Page] (https://i.imgur.com/LwYxqUk.png)
+
+![Logged in Home Page] (https://i.imgur.com/5UngeXk.png)
+
+![Add ATM Page] (https://i.imgur.com/UKbN7Px.png)
+
+![ATM Dashboard with Entries] (https://i.imgur.com/mYZM0TK.png)
+
+![ATM Detail Page] (https://i.imgur.com/MuUxbRq.png)
+
+![Map View] (https://i.imgur.com/cArNmb5.png)
 
 # Technologies Used:
 
-HTML, CSS, JS, Python, Django, Favicon, API
+HTML, CSS, JS, Python, Django, Favicon, Mapbox API, Bootstrap
 
 # Next Steps:
 
-1. Brainstorm more payment features such as a fintech API
-2. Add more CRM-like features such as the ability to call an ATM's location within the details page
+1. Make the Mapbox API more interactive with full integration
+2. Brainstorm more payment features such as a fintech API
+3. Add more CRM-like features such as the ability to call an ATM's location within the details page
