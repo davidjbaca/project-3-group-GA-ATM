@@ -7,7 +7,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Atm, Revenue, CashInput
+from .models import Atm, Revenue, CashInput, Address
 from .forms import RevenueForm, CashInputForm
 
 from django.http import HttpResponseRedirect
@@ -32,6 +32,7 @@ class AtmCreate(LoginRequiredMixin, CreateView):
 
     fields = ['name', 'location_type', 'address', 'business_fee', 'surcharge']
 
+# assings atm to a user I believe
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
@@ -133,3 +134,25 @@ class DeleteCashinput(LoginRequiredMixin, DeleteView):
     def get_success_url(self):
         atm = self.object.atm
         return reverse_lazy('detail', kwargs={'atm_id': atm.id})
+
+
+# MAPBOX STUFF
+
+class AddressView(CreateView):
+    model = Address
+    fields = ['address']
+    template_name = 'mapbox/map.html'
+    success_url = '/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['addresses'] = Address.objects.all()
+        return context
+
+    print(Address.objects.all())
+
+
+# assign address to a user i believe
+    # def form_valid(self, form):
+    #     form.instance.user = self.request.user
+    #     return super().form_valid(form)
