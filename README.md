@@ -32,17 +32,17 @@ Prior to ATM Works, there has been no truly versatile solution on the marketplac
 
 # ATM Works Screenshots:
 
-![Home Page] (https://i.imgur.com/LwYxqUk.png)
+![Home Page](https://i.imgur.com/LwYxqUk.png)
 
-![Logged in Home Page] (https://i.imgur.com/5UngeXk.png)
+![Logged In](https://i.imgur.com/5UngeXk.png)
 
-![Add ATM Page] (https://i.imgur.com/UKbN7Px.png)
+![Add an ATM](https://i.imgur.com/UKbN7Px.png)
 
-![ATM Dashboard with Entries] (https://i.imgur.com/mYZM0TK.png)
+![ATM Dashboard with Entries](https://i.imgur.com/mYZM0TK.png)
 
-![ATM Detail Page] (https://i.imgur.com/MuUxbRq.png)
+![ATM Detail Page](https://i.imgur.com/MuUxbRq.png)
 
-![Map View] (https://i.imgur.com/cArNmb5.png)
+![Map View](https://i.imgur.com/cArNmb5.png)
 
 # Technologies Used:
 
