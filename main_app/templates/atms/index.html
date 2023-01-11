@@ -156,12 +156,12 @@
     <div class="container">
       <h1 class="text-center">Your ATMs</h1>
       {% for atm in atms %}
-      <div class="card">
+      <div class="card text-center">
         <a href="{% url 'detail' atm.id %}">
           <div class="card-body">
             <span class="card-title"><strong>{{ atm.name }}</span></strong>
-            <p>Location Type: {{ atm.location_type }}</p>
-            <p>Address: {{ atm.address }}</p>
+            <p class="card-text">Location Type: {{ atm.location_type }}</p>
+            <p class="card-text">Address: {{ atm.address }}</p>
           </div>
         </a>
       </div>
