@@ -142,7 +142,7 @@ class AddressView(CreateView):
     model = Address
     fields = ['address']
     template_name = 'mapbox/map.html'
-    success_url = '/'
+    success_url = '/map/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
