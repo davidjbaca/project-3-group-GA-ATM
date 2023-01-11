@@ -29,4 +29,8 @@ urlpatterns = [
          views.add_cashinput, name='add_cashinput'),
     path('atms/cashinput/<int:pk>/delete/',
          views.DeleteCashinput.as_view(), name='cashinput_delete'),
+
+
+    # MAPBOX STUFF
+    path('map/', views.AddressView.as_view(), name='map'),
 ]
