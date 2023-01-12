@@ -3,7 +3,9 @@
 By Sean Lee, Phil Nguyen, and David Baca
 
 Link: <<GOES HERE>>
-
+  
+Trello: https://trello.com/b/9T9RgK3s/project-3
+  
 # Description:
 
 ATM Works:
