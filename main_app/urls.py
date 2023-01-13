@@ -32,5 +32,5 @@ urlpatterns = [
 
 
     # MAPBOX STUFF
-    path('map/', views.AddressView.as_view(), name='map'),
+    path('map/', views.map, name='map'),
 ]

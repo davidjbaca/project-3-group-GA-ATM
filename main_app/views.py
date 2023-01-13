@@ -7,7 +7,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Atm, Revenue, CashInput, Address
+from .models import Atm, Revenue, CashInput
 from .forms import RevenueForm, CashInputForm
 
 from django.http import HttpResponseRedirect
@@ -26,6 +26,11 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+# MAP views
+def map(request):
+    atms = Atm.objects.filter(user=request.user)
+    return render(request, 'mapbox/map.html', {'atms': atms})
+
 
 class AtmCreate(LoginRequiredMixin, CreateView):
     model = Atm
@@ -36,6 +41,7 @@ class AtmCreate(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
 
 
 class AtmUpdate(LoginRequiredMixin, UpdateView):
@@ -138,18 +144,17 @@ class DeleteCashinput(LoginRequiredMixin, DeleteView):
 
 # MAPBOX STUFF
 
-class AddressView(CreateView):
-    model = Address
-    fields = ['address']
-    template_name = 'mapbox/map.html'
-    success_url = '/map/'
+# class AddressView(CreateView):
+#     model = Address
+#     fields = ['address']
+#     template_name = 'mapbox/map.html'
+#     success_url = '/map/'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['addresses'] = Address.objects.all()
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['addresses'] = Address.objects.all()
+#         return context
 
-    print(Address.objects.all())
 
 
 # assign address to a user i believe

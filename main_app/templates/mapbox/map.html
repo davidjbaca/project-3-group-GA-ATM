@@ -172,15 +172,15 @@
         const map = new mapboxgl.Map({
           container: "map", // container ID
           style: "mapbox://styles/mapbox/streets-v12", // style URL
-          center: [-117.86214, 33.67854], // starting position [lng, lat]
-          zoom: 6, // starting zoom
+          center: [-96.808891, 32.779167], // starting position [lng, lat]
+          zoom: 3.85, // starting zoom
         });
 
-      {% for address in addresses %}
+      {% for atm in atms %}
         // Create a new marker.
         new mapboxgl.Marker()
-            .setLngLat([ {{address.long }}, {{address.lat}} ])
-            .setPopup(new mapboxgl.Popup().setHTML("<p> {{ address.address }} </p>"))
+            .setLngLat([ {{atm.long}}, {{atm.lat}} ])
+            .setPopup(new mapboxgl.Popup().setHTML("<p> {{ atm.address }} </p>"))
             .addTo(map);
       {% endfor %}
 
