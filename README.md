@@ -10,15 +10,16 @@ Trello: https://trello.com/b/9T9RgK3s/project-3
 
 ATM Works:
 
-Prior to ATM Works, there has been no truly versatile solution on the marketplace for ATM owners. Recognizing a lucrative business opportunity, the team made a dashboard for ATM owners to track their ATMs' performances.
+Prior to ATM Works, there has been no truly versatile solution on the marketplace for ATM owners. Recognizing a lucrative business opportunity, the team made a dashboard for ATM owners to track their ATMs' performances and keep track of their machines without spreadsheets.
 
 # Getting Started:
 
 1. When you open the website, notice the login/signup options. Make an account if you don't have one to access the features.
 2. Once you're logged in, make an ATM and then add relevant information such as any surcharge as well as its location.
 3. Once you've created an ATM, click on it in your dashboard to then be able to add information such as cash inputs.
-4. At any point later, you're able to edit and delete an ATM as well as delete an ATM's details.
-5. Add as many ATMs as you want!
+4. Each ATM will show up on an index view page and a mapview page where we integrated Mapbox API to show your ATM at its specific address on the map. 
+5. At any point later, you're able to edit and delete an ATM as well as delete an ATM's details.
+6. Add as many ATMs as you want!
 
 # User Stories:
 
@@ -52,6 +53,6 @@ HTML, CSS, JS, Python, Django, Favicon, Mapbox API, Bootstrap
 
 # Next Steps:
 
-1. Make the Mapbox API more interactive with full integration
+1. Better mobile styling
 2. Brainstorm more payment features such as a fintech API
 3. Add more CRM-like features such as the ability to call an ATM's location within the details page
