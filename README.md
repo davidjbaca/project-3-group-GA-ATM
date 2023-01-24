@@ -3,9 +3,9 @@
 By Sean Lee, Phil Nguyen, and David Baca
 
 Link: <<GOES HERE>>
-  
+
 Trello: https://trello.com/b/9T9RgK3s/project-3
-  
+
 # Description:
 
 ATM Works:
@@ -17,7 +17,7 @@ Prior to ATM Works, there has been no truly versatile solution on the marketplac
 1. When you open the website, notice the login/signup options. Make an account if you don't have one to access the features.
 2. Once you're logged in, make an ATM and then add relevant information such as any surcharge as well as its location.
 3. Once you've created an ATM, click on it in your dashboard to then be able to add information such as cash inputs.
-4. Each ATM will show up on an index view page and a mapview page where we integrated Mapbox API to show your ATM at its specific address on the map. 
+4. Each ATM will show up on an index view page and a mapview page where we integrated Mapbox API to show your ATM at its specific address on the map.
 5. At any point later, you're able to edit and delete an ATM as well as delete an ATM's details.
 6. Add as many ATMs as you want!
 

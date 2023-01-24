@@ -1,6 +1,5 @@
 from django.forms import ModelForm
 from .models import Revenue, CashInput
-from bootstrap_datepicker_plus.widgets import DatePickerInput
 from crispy_forms.helper import FormHelper
 from django import forms
 
@@ -18,6 +17,5 @@ class CashInputForm(ModelForm):
     model = CashInput
     fields = ['date', 'amount']
     widgets = {
-        # 'date': DatePickerInput()
         'date': forms.DateInput(attrs={'type': 'date'})
     }
